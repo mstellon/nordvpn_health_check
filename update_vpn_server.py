@@ -5,9 +5,11 @@ import os
 import random
 from string import Template
 
+rootDir = os.path.dirname(os.path.abspath(__file__))
+
 config_pth = '/config/nordvpn'
 
-with open('servers.json','r') as f:
+with open(os.path.join(rootDir,'servers.json'),'r') as f:
 	servers = json.load(f)
 server = random.choice(servers)
 
